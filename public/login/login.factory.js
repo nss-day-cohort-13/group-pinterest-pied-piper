@@ -2,9 +2,14 @@ angular.module('app')
 	.factory('LoginFactory', () => {
 
 		return {
-			login (name, email) {
-				console.log("login user: ", name);
-				console.log("login email: ", email);
+			login (email, password) {
+				console.log("login user: ", email);
+				console.log("login password: ", password);
+			},
+
+			register (email, password) {
+				console.log("login user: ", email);
+				console.log("login password: ", password);
 			}
 		}
 	})

@@ -2,7 +2,11 @@ angular.module('app')
 	.controller('LoginCtrl', function (LoginFactory) {
 		const login = this;
 
-		login.login = (name, email) => {
-			LoginFactory.login(name, email);
+		login.login = (email, password) => {
+			LoginFactory.login(email, password);
+		}
+
+		login.register = (email, password) => {
+			LoginFactory.register(email, password);
 		}
 	})
