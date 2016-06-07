@@ -1,0 +1,29 @@
+<div class="jumbotron">
+	<h1>Welcome to Pied Piper</h1>
+	<h2>We got pictures.</h2>
+</div>
+
+<form>
+	<h3>Sign In or Sign Up!</h3>
+	<div class="form-group">
+		<label for="name">Name:</label>
+		<input
+			class="form-control"
+			type="text"
+			name="name"
+			placeholder="Robert Plant">
+	</div>
+	<div class="form-group">
+		<label for="email">Email:</label>
+		<input
+			class="form-control"
+			type="email"
+			name="email"
+			placeholder="robert@plant.com">
+	</div>
+	<div>
+		<button class="btn btn-success" type="button" ng-click="login.login()">Log In</button>
+		<button class="btn btn-warning" type="button" ng-click="login.register()">Register</button>
+	</div>
+
+</form>
