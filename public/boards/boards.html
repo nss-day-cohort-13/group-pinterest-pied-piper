@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>BOARDS !!!</title>
-</head>
+<div class="boardsWrapper">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Boardtrist</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Boards</a></li>
+      <li><a href="#">Pins</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
 
-<body>
+      <li><a href="#"><span class="navbar-text"></span>Signed in as joe@abc.com</a></li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
 <h1>All the boards</h1>
 
-    <div class="container">
-        <div ui-sortable ng-model='model' ng-controller='BoardsCtrl' class='panel panel-default'>
-          <div class='panel-body'>
-            
-          </div>
-        </div>
-    </div>
-</body>
+<div class="container">
+    <div ui-sortable ng-model='model' ng-controller='BoardsCtrl' class='panel panel-default'>
+      <div class='panel-body'>
 
-</html>
+      </div>
+    </div>
+</div>
