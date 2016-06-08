@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('BoardsCtrl', ['$scope', 'BoardsFactory',function ($scope, BoardsFactory) {
+  .controller('BoardsCtrl', function ($scope, $location, BoardsFactory) {
     $scope.board = [];
 
     $scope.addBoard = function () {
@@ -9,6 +9,12 @@ angular.module('app')
     }
 
     $scope.seeBoard = function () {
-      
+
     }
-  }])
+    newBoardPath(){
+      $location.path("/create-board")
+    }
+  })
+  .controller('CreateBoardCtrl', function($scope, CreateBoard) {
+    
+  })

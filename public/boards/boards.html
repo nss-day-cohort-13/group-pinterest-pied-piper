@@ -21,6 +21,9 @@
 <h1>All the boards</h1>
 
 <div class="container">
+    <div>
+      <button type="button" class="btn btn-warning" ng-click="newBoard()">Create Board</button>
+    </div>
     <div ui-sortable ng-model='model' ng-controller='BoardsCtrl' class='panel panel-default'>
       <div class='panel-body'>
 
