@@ -1,15 +1,19 @@
 angular.module('app')
-    .factory('BoardsFactory', ['$http', function($http) {
-            return $http({
-                method: 'GET',
-                url: 'https://pied-piper-5ad6b.firebaseio.com/.json'
-            }).then(function successCallback(response) {
-                console.log("status: ", response.status);
-                console.log("data: ", response.data);
-            }, function errorCallback(response) {
-                console.log("error callback: ", response);
-            })
-        }])
+    .factory('BoardsFactory', ($http, firebase_URL) => {
+        let boardList = null;
+            return {
+              getBoards(){
+                return $http
+                  .get(`${firebase_URL}/.json`)
+                  .then( response => boardList = response.data)
+                      // console.log("status: ", response.status);
+                      // console.log("data: ", response.data);
+                  // }, function errorCallback(response) {
+                  //     console.log("error callback: ", response);
+                  // })
+              }
+            }
+        })
 
 
         //factory only talks to FB and relays info to the view
