@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('pied-piper')
-  .controller('BoardsCtrl', function ($scope) {
+angular.module('app')
+  .controller('BoardsCtrl', ['$scope', 'BoardsFactory',function ($scope, BoardsFactory) {
     $scope.board = [];
 
     $scope.addBoard = function () {
@@ -11,4 +11,4 @@ angular.module('pied-piper')
     $scope.seeBoard = function () {
       
     }
-  })
+  }])

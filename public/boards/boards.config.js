@@ -1,6 +1,7 @@
 'use strict';
 
-.config(function($routeProvider, $http) {
+angular.module('app')
+.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/boards', {
             templateUrl: 'boards/boards.html',
@@ -13,4 +14,4 @@
       
 
  
-})
+}])
