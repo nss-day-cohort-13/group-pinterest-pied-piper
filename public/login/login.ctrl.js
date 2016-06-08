@@ -1,12 +1,14 @@
 angular.module('app')
-	.controller('LoginCtrl', function (LoginFactory) {
+	.controller('LoginCtrl', function (LoginFactory, $location) {
 		const login = this;
 
-		login.login = (email, password) => {
+		login.loginUser = (email, password) => {
 			LoginFactory.login(email, password);
+			$location.path('/boards');
 		}
 
-		login.register = (email, password) => {
+		login.registerUser = (email, password) => {
 			LoginFactory.register(email, password);
+			$location.path('/boards');
 		}
 	})

@@ -4,24 +4,21 @@ angular.module('app')
 		let	token;
 
 	firebase.auth().onAuthStateChanged((user) => {
-		console.log("user: ", user);
 		if (user) {
 			userId = user.uid;
 			user.getToken()
 				.then(t => token = t)
-				.then(console.log("token: ", token))
+				.then()
 		}
 	})
 
 		return {
 			login (email, password) {
 				firebase.auth().signInWithEmailAndPassword(email, password)
-
 			},
 
 			register (email, password) {
 				firebase.auth().createUserWithEmailAndPassword(email, password)
-
 			},
 
 			getUserData () {
