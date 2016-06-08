@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-  .controller('BoardsCtrl', ['$scope', 'BoardsFactory',function ($scope, BoardsFactory) {
+  .controller('BoardsCtrl', ['$scope', 'BoardsFactory', 'LoginFactory', '$location', '$timeout', function ($scope, BoardsFactory, LoginFactory, $location, $timeout) {
     $scope.board = [];
 
     $scope.addBoard = function () {
@@ -9,6 +9,12 @@ angular.module('app')
     }
 
     $scope.seeBoard = function () {
-      
+
+    }
+
+    $scope.logout = function () {
+    	LoginFactory.logout()
+    		.then($location.path.bind($location, '/'))
+    		.then($timeout)
     }
   }])

@@ -1,5 +1,5 @@
 angular.module('app')
-	.factory('LoginFactory', () => {
+	.factory('LoginFactory', ($location, $timeout) => {
 		let userId;
 		let	token;
 
@@ -8,7 +8,8 @@ angular.module('app')
 			userId = user.uid;
 			user.getToken()
 				.then(t => token = t)
-				.then()
+				.then($location.path.bind($location, '/boards'))
+				.then($timeout)
 		}
 	})
 
@@ -19,6 +20,10 @@ angular.module('app')
 
 			register (email, password) {
 				firebase.auth().createUserWithEmailAndPassword(email, password)
+			},
+
+			logout () {
+				return	firebase.auth().signOut();
 			},
 
 			getUserData () {
