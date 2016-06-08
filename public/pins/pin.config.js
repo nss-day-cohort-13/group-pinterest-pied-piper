@@ -3,7 +3,7 @@ angular.module('app')
     $routeProvider
       .when('/pins', {
         templateUrl: 'pins/pin.html',
-        controller: 'PinsCtrl',
+        controller: 'PinsCtrl'
         // controllerAs: 'pins'
       })
   }])
