@@ -1,15 +1,17 @@
 angular.module('app')
 	.factory('LoginFactory', () => {
 
+	firebase.auth().onAuthStateChanged((userObj) => {
+		console.log("userObj: ", userObj);
+	})
+
 		return {
 			login (email, password) {
-				console.log("login user: ", email);
-				console.log("login password: ", password);
+				firebase.auth().signInWithEmailAndPassword(email, password)
 			},
 
 			register (email, password) {
-				console.log("login user: ", email);
-				console.log("login password: ", password);
+				firebase.auth().createUserWithEmailAndPassword(email, password)
 			}
 		}
 	})
