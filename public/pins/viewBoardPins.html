@@ -5,20 +5,21 @@
       <a class="navbar-brand" href="#">Boardtriste</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Boards</a></li>
-      <li><a href="#">Pins</a></li>
+      <li><a href="#">Boards</a></li>
+      <li class="active"><a href="#">Pins</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
 
       <li><a href="#"><span class="navbar-text"></span>Signed in as joe@abc.com</a></li>
       <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li ng-click="logout()"><a><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 
-
-<div class="container">
-    <div ui-sortable ng-model='model'>
-    </div>
+<div ng-repeat="(key, pin) in viewBoardPins.boardPins">
+  <p>{{pin.title}}</p>
+  <img>{{pin.URL}}</img>
+  <!-- <p>{{board.url}}</p> -->
 </div>
+<button ng-click="viewBoardPins.goToAddPin()">New Pin</button>

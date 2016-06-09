@@ -5,13 +5,12 @@ angular.module('app')
     $routeProvider
         .when('/boards', {
             templateUrl: 'boards/boards.html',
-            controller: 'BoardsCtrl'
+            controller: 'BoardsCtrl',
+            controllerAs: 'boards'
         })
-        .when('/boards/:id', {
-            templateUrl: '/boards/user-board.html',
-            controller: 'BoardsCtrl'
+        .when('/userBoards', {
+            templateUrl: 'boards/viewUserBoards.html',
+            controller: 'UserBoardsCtrl',
+            controllerAs: 'userBoards'
         })
-      
-
- 
 }])

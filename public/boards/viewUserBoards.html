@@ -1,3 +1,4 @@
+
 <div class="boardsWrapper">
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container-fluid">
@@ -12,13 +13,13 @@
 
       <li><a href="#"><span class="navbar-text"></span>Signed in as joe@abc.com</a></li>
       <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li ng-click="boards.logout()"><a><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 
-
-<div class="container">
-    <div ui-sortable ng-model='model'>
-    </div>
+<h1>User's Boards</h1>
+<div ng-repeat="(key, board) in userBoards.userBoardsList">
+  <p ng-click="userBoards.showBoardPins(key)">{{board.boardTitle}}</p>
+  <!-- <p>{{board.url}}</p> -->
 </div>

@@ -1,20 +1,40 @@
 angular.module('app')
-    .factory('BoardsFactory', ($http, firebase_URL) => {
-        let boardList = null;
-            return {
-              getBoards(){
-                return $http
-                  .get(`${firebase_URL}/.json`)
-                  .then( response => boardList = response.data)
-                      // console.log("status: ", response.status);
-                      // console.log("data: ", response.data);
-                  // }, function errorCallback(response) {
-                  //     console.log("error callback: ", response);
-                  // })
-              }
-            }
-        })
-
+    .factory('BoardsFactory', ($http, $parse, firebase_URL, LoginFactory) => {
+      let boardsList = null;
+      let boardId = null;
+        return {
+          getBoards: () => {
+            return $http({
+              method: 'GET',
+              url: `${firebase_URL}/boards.json?auth=${LoginFactory.getUserData().authToken}`
+            }).then((response) => {
+                return (response.data);
+              }, (response) => {
+                console.error(response.status);
+              });
+          },
+          getUserBoards(){
+            let userBoards = []
+            $http
+              .get(`${firebase_URL}/boards.json?auth=${LoginFactory.getUserData().authToken}`)
+              .then(response => {
+                const allBoards = response.data;
+                console.log(allBoards)
+                for (var board in allBoards) {
+                  console.log(allBoards[board].UID);
+                  console.log(LoginFactory.getUserData().user);
+                    if (allBoards[board].UID == LoginFactory.getUserData().user) {
+                      userBoards[userBoards.length] = allBoards[board];
+                    }
+                }
+              });
+              console.log(userBoards);
+            return userBoards;
+          },
+          setBoardId: key => (boardId = key),
+          getBoardId: () => (boardId)
+        }
+      })
 
         //factory only talks to FB and relays info to the view
         //view is only input/output
