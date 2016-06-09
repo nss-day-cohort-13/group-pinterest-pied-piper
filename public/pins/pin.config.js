@@ -8,7 +8,7 @@ angular.module('app')
         })
         .when('/addPin', {
           templateUrl: 'pins/addPin.html',
-          controller: 'AddPinCtrl',
-          controllerAs: 'addPin'
+          controller: 'AddNewPinCtrl',
+          controllerAs: 'addNewPin'
         });
   });
