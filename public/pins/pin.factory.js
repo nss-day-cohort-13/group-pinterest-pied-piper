@@ -30,7 +30,7 @@ angular.module('app')
             "boardIDs": `${boardId}`,
             "title": `${title}`
           }
-          $http.post(`${firebase_URL}/pins.json?auth=${userToken}`, pin);
+          $http.post(`${firebase_URL}/pins.json?auth=${userToken}`, pin)
             .error(function (status) {
               console.error(status);
             });

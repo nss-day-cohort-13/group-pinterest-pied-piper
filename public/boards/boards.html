@@ -13,17 +13,24 @@
 
       <li><a href="#"><span class="navbar-text"></span>Signed in as joe@abc.com</a></li>
       <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
-      <li ng-click="logout()"><a><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      <li ng-click="boards.logout()"><a><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 
 <h1>All the boards</h1>
+<div ng-repeat="(key, board) in boards.boardsList">
+  <p>{{board.boardTitle}}</p>
+  <!-- <p>{{board.url}}</p> -->
+</div>
 
-<div class="container">
+<!-- <div class="container">
     <div ui-sortable ng-model='model' ng-controller='BoardsCtrl' class='panel panel-default'>
       <div class='panel-body'>
-
+        <div ng-repeat="(key, board) in boards.boardsList">
+          <p>{{board.title}}</p>
+          <p>{{board.url}}</p>
+        </div>
       </div>
     </div>
-</div>
+</div> -->

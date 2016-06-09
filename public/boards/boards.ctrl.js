@@ -1,20 +1,21 @@
 'use strict';
 
 angular.module('app')
-  .controller('BoardsCtrl', ['$scope', 'BoardsFactory', 'LoginFactory', '$location', '$timeout', function ($scope, BoardsFactory, LoginFactory, $location, $timeout) {
-    $scope.board = [];
+  .controller("BoardsCtrl", function(
+    BoardsFactory, LoginFactory, $location, $scope, $timeout
+  ){
+    const boards = this;
+    boards.boardsList = null
+    BoardsFactory.getBoards()
+      .then((response) => {
+        boards.boardsList = response;
+      })
+      .then($timeout)
+      .then(() => console.log(boards.boardsList));
 
-    $scope.addBoard = function () {
-      $scope.board.push($scope.board);
-    }
-
-    $scope.seeBoard = function () {
-
-    }
-
-    $scope.logout = function () {
-    	LoginFactory.logout()
-    		.then($location.path.bind($location, '/'))
-    		.then($timeout)
-    }
-  }])
+    boards.logout = function () {
+      LoginFactory.logout()
+      .then($location.path.bind($location, '/'))
+      .then($timeout)
+    };
+  })
