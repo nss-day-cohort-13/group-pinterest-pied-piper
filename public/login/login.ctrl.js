@@ -1,5 +1,5 @@
 angular.module('app')
-	.controller('LoginCtrl', function (LoginFactory, $location) {
+	.controller('LoginCtrl', function (LoginFactory) {
 		const login = this;
 
 		login.loginUser = (email, password) => {
