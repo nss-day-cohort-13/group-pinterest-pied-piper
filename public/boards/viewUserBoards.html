@@ -1,0 +1,25 @@
+
+<div class="boardsWrapper">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Boardtriste</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Boards</a></li>
+      <li><a href="#">Pins</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+
+      <li><a href="#"><span class="navbar-text"></span>Signed in as joe@abc.com</a></li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
+      <li ng-click="boards.logout()"><a><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h1>User's Boards</h1>
+<div ng-repeat="(key, board) in userBoards.userBoardsList">
+  <p ng-click="userBoards.showBoardPins(key)">{{board.boardTitle}}</p>
+  <!-- <p>{{board.url}}</p> -->
+</div>
