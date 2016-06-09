@@ -8,4 +8,9 @@ angular.module('app')
             controller: 'BoardsCtrl',
             controllerAs: 'boards'
         })
+        .when('/userBoards', {
+            templateUrl: 'boards/viewUserBoards.html',
+            controller: 'UserBoardsCtrl',
+            controllerAs: 'userBoards'
+        })
 }])
