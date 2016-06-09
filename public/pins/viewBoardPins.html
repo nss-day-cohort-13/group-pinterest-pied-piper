@@ -10,7 +10,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
 
-      <li><a href="#"><span class="navbar-text"></span>Signed in as joe@abc.com</a></li>
+      <li><a href="#"><span class="navbar-text"></span>Signed in as pat@rick.com</a></li>
       <!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li> -->
       <li ng-click="logout()"><a><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
@@ -19,7 +19,7 @@
 
 <div ng-repeat="(key, pin) in viewBoardPins.boardPins">
   <p>{{pin.title}}</p>
-  <img>{{pin.URL}}</img>
+  <img src="{{pin.URL}}"></img>
   <!-- <p>{{board.url}}</p> -->
 </div>
 <button ng-click="viewBoardPins.goToAddPin()">New Pin</button>
