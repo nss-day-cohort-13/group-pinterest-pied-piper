@@ -7,11 +7,8 @@ angular.module('app')
             templateUrl: 'boards/boards.html',
             controller: 'BoardsCtrl'
         })
-        .when('/boards/:id', {
-            templateUrl: '/boards/user-board.html',
-            controller: 'BoardsCtrl'
+        .when('/create-board', {
+            templateUrl: '/boards/create.board.html',
+            controller: 'CreateBoardCtrl'
         })
-      
-
- 
 }])

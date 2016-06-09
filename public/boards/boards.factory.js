@@ -14,6 +14,25 @@ angular.module('app')
               }
             }
         })
+    .factory('CreateBoard', ($http, firebase_URL) => {
+      return {
+        create(board){
+          return $http
+            .post(`${firebase_URL}/boards.json`)
+            .then()
+        }
+      }
+
+
+    })
+
+//put http inside new add board controller
+//post factory function
+//get token
+//new controller
+//create new partial to add board
+
+//create new board button with ngClick that changes location.path
 
 
         //factory only talks to FB and relays info to the view
