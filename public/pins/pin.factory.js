@@ -15,9 +15,9 @@ angular.module('app')
             const allPins = response.data
             console.log(allPins)
             for (var pinID in allPins) {
-              for (var board in allPins.pinID.boardIDs) {
-                if (board === boardId) {
-                  console.log(board)
+              for (var pin in allPins.pinID) {
+                if (pin.boardIDs === boardId) {
+                  boardPins[boardPins.length] = pinID;
                 }
               }
             }

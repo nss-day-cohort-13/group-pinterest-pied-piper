@@ -5,3 +5,8 @@ angular.module('app')
       pinsFactory.getPins("board1")
     }
   })
+  .controller("AddPinCtrl", function() {
+    const addPin = this;
+    addPin.putPin = 
+
+  });
